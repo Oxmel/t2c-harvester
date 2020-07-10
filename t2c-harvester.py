@@ -86,13 +86,12 @@ def get_line_data(url):
 
 
 # Créé la bdd et les tables qui seront utilisées pour stocker les data
-# On utilise un système de 'foreign keys' pour lier les tables entre elles
+# On utilise un système de 'Foreign Key' pour lier les tables entre elles
 # Ce système permet de rechercher facilement toutes les directions / arrêts
 # pour une ligne donnée (voir le README pour des exemples)
 def create_db():
     print ('Création de la base de donnée...')
-    # Get foreign keys state (0 or 1)
-    # Récupère l'état de l'option foreign jeys (0 ou 1)
+    # Récupère l'état de l'option 'foreign_keys' (0 ou 1)
     foreign_key = conn.execute('PRAGMA foreign_keys')
     # La requête retourne un tuple donc on extrait la valeur
     foreign_state = foreign_key.fetchone()[0]

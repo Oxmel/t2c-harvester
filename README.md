@@ -18,7 +18,7 @@ Et, comme ils ne semblent pas particulièrement pressés d'ouvrir l'accès à ce
 Pour générer une base de donnée,  clonez ce repo, installez les dépendances, et lancez le script :
 
     $ git clone https://github.com/Oxmel/t2c-harvester
-    $ pip install BeautifulSoup4
+    $ pip install beautifulsoup4
     $ python t2c-harvester.py
 
 #### 2. Accéder aux données

@@ -8,7 +8,9 @@ A l'origine, ce script me servait à générer automatiquement une base de donn�
 
 Aujourd'hui la situation est assez différente, et l'offre est pléthorique en matière de services et d'applications. Avec notamment les appli android [Auvergne Mobilité](https://play.google.com/store/apps/details?id=fr.auvergne.mobilite.android), mais également l'arrivée plus récente de [MyBus](https://play.google.com/store/apps/details?id=fr.monkeyfactory.mybusclermontferrand&hl=fr) ou encore l'appli web communautaire [t2c.app](https://twitter.com/ToshCamille/status/1244221407921389568). 
 
-En revanche, et bien que les données de navigation du réseau T2C soient disponibles sur l'api [navitia.io](navitia.io) depuis des années déjà, elles ne sont toujours pas accessibles publiquement. Et, comme la T2C ne semble pas particulièrement pressée de prendre le train de l'OpenData, ce script permet au moins d'offrir une solution alternative. En attendant qu'ils se réveillent et finissent, un jour peut-être, par ouvrir les données au grand public (#IWantToBelieve).
+En revanche, bien que le [SMTC](http://www.smtc-clermont-agglo.fr/) de Clermont ait récemment fait un premier pas en mettant en ligne un jeu de données sur [transport.data.gouv.fr](https://transport.data.gouv.fr/datasets/donnees-reseau-tc-t2c-ete-2020-gtfs/), il ne s'agit là que de données bruts et ne permettant d'obtenir que les horaires de passage théoriques. Alors même que les data présentes sur [navitia.io](https://navitia.io) sont déjà mises en forme et prêtes à l'emploi, en offrant en plus la possibilité d'obtenir les horaires en temps réel. 
+
+Et, comme ils ne semblent pas particulièrement pressés d'ouvrir l'accès à cette api, ce script permet au moins d'offrir une solution alternative. En attendant qu'ils finissent, un jour peut-être, par se décider à permettre au grand public d'accéder à leur données de transport sur navitia (#IWantToBelieve).
 
 ## Exemples d'utilisation
 

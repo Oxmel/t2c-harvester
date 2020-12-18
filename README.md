@@ -1,6 +1,6 @@
 # T2C Harvester - v0.1
 
-**Mise à jour: L'ensemble des données de transport de la T2C sont désormais disponibles sous licence ODBL sur [transport.data.gouv](https://transport.data.gouv.fr/datasets/aom/34) et directement exploitables via l'api de [navitia.io](https://navitia.opendatasoft.com/explore/dataset/fr-se/table/). Un compte est requis pour pouvoir dialoguer avec l'api, mais l'utilisation est gratuite (jusqu'à 20k requêtes / mois avec le free plan).**
+**Mise à jour: Ce projet a été abandonné car l'ensemble des données de transport de la T2C sont désormais disponibles sous licence ODBL sur [transport.data.gouv](https://transport.data.gouv.fr/datasets/aom/34) et directement exploitables via l'api de [navitia.io](https://navitia.opendatasoft.com/explore/dataset/fr-se/table/). Dans ces conditions, un tel script basé sur du web scraping n'a donc plus vraiment de raison d'être.**
 
 ## Description
 

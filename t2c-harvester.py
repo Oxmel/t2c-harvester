@@ -36,8 +36,6 @@ import time
 import re
 
 
-# Url base permettant de récupérer les numéros de lignes
-line_url = 'http://auvergne-mobilite.fr/fr/schedule/line/?&lineSchedule[network]=network%3AT2C'
 # Url base des directions
 dir_url = 'http://www.t2c.fr/admin/synthese?SERVICE=page&p=17732927961956390&noline='
 # Url base des arrêts
@@ -50,24 +48,37 @@ conn = sqlite3.connect(db)
 cur = conn.cursor()
 
 
-# Récupère le nom / numéro de chaque ligne du réseau
-def get_lines():
-    line_list = OrderedDict()
-    req = urllib.urlopen(line_url)
-    soup = BeautifulSoup(req, from_encoding='utf-8', features='html.parser')
-    lines = soup.find('select', {'id': 'lineSchedule_line'}).find_all('option')[1:]
+lines = {
 
-    for line in lines:
-        try:
-            line_name = re.search(r'(^[A-C]|[0-9]{1,2})', line.text).group(1)
-            line_num = re.search(r'line:T2C:(.*)', line['value']).group(1)
-        # Ignore les lignes 'spéciales' qui ne sont pas exploitables
-        except AttributeError:
-            pass
-
-        line_list[line_name] = line_num
-
-    return line_list
+    'A': '11821953316814895',
+    'B': '11821953316814897',
+    'C': '11821953316814915',
+    '3': '11821953316814882',
+    '4': '11821953316814888',
+    '5': '11821953316814889',
+    '7': '11821953316814891',
+    '8': '11821953316814892',
+    '9': '11821953316814893',
+    '10': '11821953316814874',
+    '12': '11821953316814875',
+    '13': '11821953316814876',
+    '20': '11821953316814877',
+    '21': '11821953316814878',
+    '22': '11821953316814879',
+    '23': '11822086460801028',
+    '24': '11821953316814913',
+    '25': '11822086460801025',
+    '26': '11821953316814880',
+    '27': '11821953316814881',
+    '28': '11822086460801030',
+    '31': '11821953316814883',
+    '32': '11821953316814884',
+    '33': '11821953316814914',
+    '34': '11821953316814885',
+    '35': '11821953316814886',
+    '36': '11821953316814887',
+    '37': '11822086460801032'
+}
 
 
 # Récupère chaque direction / arrêt pour une ligne donnée
@@ -125,7 +136,7 @@ def create_db():
 
 # Scrap les infos des lignes / directions / arrêts et les stocke dans la bdd
 def fill_db():
-    line_list = get_lines()
+    line_list = lines
     for line_name, line_num in line_list.items():
         print ('Traitement de la ligne %s' %line_name)
         cur.execute('''INSERT INTO lignes(

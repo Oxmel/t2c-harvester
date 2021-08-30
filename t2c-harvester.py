@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
 
@@ -27,7 +27,7 @@ au projet 'Bus-O-Matic' (https://github.com/Oxmel/busomatic).
 '''
 
 
-import urllib
+import urllib.request, urllib.parse, urllib.error
 from bs4 import BeautifulSoup
 from collections import OrderedDict
 import sqlite3
@@ -84,7 +84,7 @@ lines = {
 # Récupère chaque direction / arrêt pour une ligne donnée
 def get_line_data(url):
     item_list = OrderedDict()
-    req = urllib.urlopen(url)
+    req = urllib.request.urlopen(url)
     soup = BeautifulSoup(req, from_encoding='utf-8', features='html.parser')
 
     # Skip le 1er résultat qui est un placeholder
@@ -137,8 +137,8 @@ def create_db():
 # Scrap les infos des lignes / directions / arrêts et les stocke dans la bdd
 def fill_db():
     line_list = lines
-    for line_name, line_num in line_list.items():
-        print ('Traitement de la ligne %s' %line_name)
+    for line_name, line_num in list(line_list.items()):
+        print(('Traitement de la ligne %s' %line_name))
         cur.execute('''INSERT INTO lignes(
             nom, numero) VALUES(?, ?)''',
             (line_name, line_num))
@@ -148,7 +148,7 @@ def fill_db():
         line_key = line_row_id.fetchone()[0]
         # ID de ligne en paramètre pour récupérer chaque direction
         line_dir = get_line_data(dir_url + line_num)
-        for dir_name, dir_num in line_dir.items():
+        for dir_name, dir_num in list(line_dir.items()):
             cur.execute('''INSERT INTO directions(
                 id_ligne, nom, numero) VALUES(?, ?, ?)''',
                 (line_key, dir_name, dir_num))
@@ -158,7 +158,7 @@ def fill_db():
             dir_key = dir_row_id.fetchone()[0]
             # ID de direction en paramètre pour récupérer chaque arrêt
             line_stop = get_line_data(stop_url + dir_num)
-            for stop_name, stop_num in line_stop.items():
+            for stop_name, stop_num in list(line_stop.items()):
                 cur.execute('''INSERT INTO arrets(
                     id_ligne, id_direction, nom, numero) VALUES(?, ?, ?, ?)''',
                     (line_key, dir_key, stop_name, stop_num))

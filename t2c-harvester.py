@@ -3,7 +3,7 @@
 
 
 '''
-                            T2C Harvester v0.1
+                            T2C Harvester v0.1.1
 
 Dans le cadre du fonctionnement de ses services de transport, la T2C a mis en
 place un système de numérotation technique (ou ID) de chacune de ses lignes.

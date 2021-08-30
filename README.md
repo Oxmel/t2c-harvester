@@ -1,4 +1,4 @@
-# T2C Harvester - v0.1
+# T2C Harvester - v0.1.1
 
 **Mise à jour du 29/08/2021** : Ce projet avait été archivé pendant un temps car l'ensemble des données de transport de la T2C étaient jusqu'à présent disponibles sous licence ODBL sur [transport.data.gouv.fr](https://transport.data.gouv.fr/datasets/aom/34) et directement exploitables via l'api de [navitia.io](https://navitia.opendatasoft.com/explore/dataset/fr-se/table/).
 

@@ -6,7 +6,7 @@ A l'origine, et en l'absence de sources ouvertes, ce script me servait à géné
 
 Aujourd'hui, il n'est normalement plus nécessaire d'utiliser cette méthode car l'ensemble des données de transport de la T2C sont disponibles sous licence ODBL sur [transport.data.gouv.fr](https://transport.data.gouv.fr/datasets/aom/34). Et directement exploitables via l'api de [navitia.io](https://navitia.opendatasoft.com/explore/dataset/fr-se/table/).
 
-Le problème étant que ces données sont mises à jour de manière assez aléatoire. Et il arrive parfois qu'elles deviennent inexpoitables pendant plusieurs mois comme c'est le cas actuellement. Cette méthode peut alors servir de fallback le temps qu'un nouveau jeu de données à jour soit disponible.
+Le problème étant que ces données sont mises à jour de manière assez aléatoire. Et il arrive parfois qu'elles deviennent inexpoitables pendant plusieurs semaines / mois. Cette méthode peut alors servir de fallback le temps qu'un nouveau jeu de données à jour soit disponible.
 
 
 ## Alternatives

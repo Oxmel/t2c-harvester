@@ -5,24 +5,24 @@
 '''
                             T2C Harvester v0.1.1
 
-Dans le cadre du fonctionnement de ses services de transport, la T2C a mis en
-place un système de numérotation technique (ou ID) de chacune de ses lignes.
-Chaque ligne dispose donc d'un nom (ex. 'Ligne B'), ainsi que d'un identifiant
-technique (ex. '11821953316814897'). Même chose pour chaque direction ainsi que
-chaque arrêt qui disposent eux aussi du même type d'identifiant.
+Dans le cadre du fonctionnement de ses transports en commun, la T2C a mis en
+place un système de numérotation technique pour chacune de ses lignes. Chaque
+ligne dispose donc d'un nom (ex. 'Ligne B'), ainsi que d'un identifiant unique
+(ex. '11821953316814897'). Même chose pour chaque direction / arrêt.
 
-Ce numéro permet d'obtenir les horaires de passage en temps réel grâce à la
-page web 'qr.tc2.fr' qui est un service d'information par qrcode disponible à
-chaque arrêt. Cependant, en temps normal pour pouvoir utiliser ce service, il
-faut être physiquement présent à l'arrêt et flasher un qrcode avec son mobile
-afin de pouvoir accéder aux horaires en question.
+La T2C a également mis en place un service d'information pour consulter les
+horaires de passage d'une ligne en flashant un QRCode présent à chaque arrêt.
+QRCode qui redirige vers une url contenant l'identifiant de l'arrêt en
+paramètre (ex. 'qr.t2c.fr/qrcode?_stop_id=1234').
 
-Ce script a pour but de récupérer les identifiants de chaque ligne régulière du
-réseau T2C et chaque direction / arrêt associé et de les stocker dans un base
-de donnée au format sqlite. Il est ensuite possible, à partir de cette bdd, de
-construire un système de recherche et d'affichage des horaires en temps réel
-pour n'importe quel arrêt. Pour un exemple d'application pratique, se référer
-au projet 'Bus-O-Matic' (https://github.com/Oxmel/busomatic).
+Ce script récupére les identifiants de chaque ligne régulière du réseau et
+chaque direction / arrêt associé puis les stocke dans une base de données
+SQLite. Ce qui permet ensuite de construire un système de recherche et
+d'affichage des horaires pour un arrêt donné en se basant sur ce service
+d'information.
+
+Voir le projet 'Bus-O-Matic pour un exemple d'application pratique
+(https://github.com/Oxmel/busomatic).
 
 '''
 
